@@ -7,7 +7,13 @@ import {
   ChevronRight, ChevronUp, ChevronDown, Coffee, Sparkles, Flame, Ban, PenLine,
   Crown, Trophy, Medal, Globe, User, LogOut, Search, Copy
 } from "lucide-react";
-import { supabase } from "../lib/supabaseClient";
+import { createClient } from "@supabase/supabase-js";
+
+// Khởi tạo Supabase an toàn với Fallback (Tránh tuyệt đối lỗi crash Vercel)
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://ysvwudazegxcftpdqnfm.supabase.co';
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_goemAKSeK9dYisVvjRRxvA_0rQh4RWL';
+
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 // ---------------------------------------------------------------------------
 // Constants & seed data
