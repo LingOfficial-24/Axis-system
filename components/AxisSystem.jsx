@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { createClient } from "@supabase/supabase-js";
 
-// Khởi tạo Supabase an toàn với Fallback (Tránh tuyệt đối lỗi crash Vercel)
+// Khởi tạo Supabase an toàn với Fallback
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://ysvwudazegxcftpdqnfm.supabase.co';
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || 'sb_publishable_goemAKSeK9dYisVvjRRxvA_0rQh4RWL';
 
